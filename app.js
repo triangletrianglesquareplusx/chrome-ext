@@ -2,13 +2,24 @@ let myLeads = [];
 
 const inputElement = document.getElementById('input-el');
 const buttonElement = document.getElementById('input-btn');
-const leadsElement = document.getElementById('leads-el');
+let leadsElement = document.getElementById('leads-el');
+
 buttonElement.addEventListener('click', ()=>{
     
-    let liElement = document.createElement('li');
-    liElement.textContent = inputElement.value;
+    //push lead to leads arr
     myLeads.push(inputElement.value);
-    leadsElement.appendChild(liElement);
+
+    renderLeads();
     
 });
+
+function renderLeads(){
+    
+    for(let i=0;i<myLeads.length;i++){
+        let liElement = document.createElement('li');
+        liElement.textContent = myLeads[i];
+        leadsElement.appendChild(liElement);
+    }
+}
+
 
