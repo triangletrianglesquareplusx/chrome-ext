@@ -8,18 +8,12 @@ buttonElement.addEventListener('click', ()=>{
     
     //push lead to leads arr
     myLeads.push(inputElement.value);
-
-    renderLeads();
+    let liElement = document.createElement('li');
+    liElement.textContent = inputElement.value;
+    leadsElement.appendChild(liElement);
     
 });
 
-function renderLeads(){
-    
-    for(let i=0;i<myLeads.length;i++){
-        let liElement = document.createElement('li');
-        liElement.textContent = myLeads[i];
-        leadsElement.appendChild(liElement);
-    }
-}
+
 
 
